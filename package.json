@@ -1,0 +1,38 @@
+{
+  "name": "@m7l5/pi-tldraw-offline",
+  "version": "0.1.0",
+  "description": "Control open tldraw Offline canvases from Pi.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "tldraw",
+    "tldraw-offline"
+  ],
+  "files": [
+    "index.ts",
+    "lib.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check index.ts && node --check lib.ts && node --check test/lib.test.ts",
+    "test": "node --test test/*.test.ts",
+    "pack:check": "npm pack --dry-run"
+  }
+}
