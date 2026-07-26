@@ -27,10 +27,22 @@
     "@earendil-works/pi-coding-agent": "*",
     "typebox": "*"
   },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": {
+      "optional": true
+    },
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "audit:production": "npm audit --omit=dev --audit-level=moderate",
     "check": "node --check index.ts && node --check lib.ts && node --check test/lib.test.ts",
     "test": "node --test test/*.test.ts",
     "pack:check": "npm pack --dry-run"
